@@ -76,7 +76,8 @@
     }
   </style>
 </head>
-<body class="bg-background text-white font-sans">
+<body class="bg-background text-white font-sans dark:bg-black dark:text-white">
+
 
   <!-- NAVIGATION -->
   <header class="flex justify-between items-center px-6 md:px-10 py-4 bg-black sticky top-0 z-50 shadow-md" role="banner">
@@ -101,6 +102,10 @@
       <a href="#contact" class="text-gray-300 hover:text-primary py-2">Contact</a>
     </nav>
     <a href="#contact" class="bg-primary text-black px-4 py-2 rounded-md font-semibold hover:bg-sky-400 hidden md:block">Hire Me</a>
+    <button id="theme-toggle" class="ml-4 p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition" aria-label="Toggle Dark Mode">
+  🌙
+</button>
+
   </header>
 
   <!-- HERO SECTION -->
@@ -235,7 +240,44 @@
     hamburger.addEventListener('click', () => {
       mobileMenu.classList.toggle('active');
     });
-  </script>
+</script>
+
+<!-- Chatbot: Nova -->
+<script>
+ window.chatbaseConfig = {
+  chatbotId: "xLT5LA7B2TfD3kCnDQqi7",
+  welcomeMessage: "Hi! I'm EEE-DOLO 👋 How can I help you today?",
+  theme: "dark", // "light" or "dark"
+  autoOpen: false
+  };
+</script>
+<script src="https://www.chatbase.co/embed.min.js" id="chatbase-script" defer></script>
+
+
+<style>
+  #chatbase-launcher {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: #0ea5e9;
+    color: white;
+    padding: 14px 16px;
+    border-radius: 50%;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 9999;
+  }
+</style>
+
+<div id="chatbase-launcher" title="Chat with EEE-DOLO">💬</div>
+
+<script>
+  const launcher = document.getElementById('chatbase-launcher');
+  launcher.addEventListener('click', () => {
+    window.Chatbase?.openChat();
+  });
+</script>
 
 </body>
 </html>
